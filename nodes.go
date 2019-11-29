@@ -107,7 +107,7 @@ func ParseNodesMetrics(input []byte) *NodesMetrics {
 
 // Execute the squeue command and return its output
 func NodesData() []byte {
-	cmd := exec.Command("sinfo", "-h", "-o %n,%T")
+	cmd := exec.Command("/opt/slurm/17.11.13/bin/sinfo", "-h", "-o %n,%T")
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
 		log.Fatal(err)
